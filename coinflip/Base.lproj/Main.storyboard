@@ -23,11 +23,16 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tap" translatesAutoresizingMaskIntoConstraints="NO" id="UI8-CQ-9TW">
+                                <rect key="frame" x="201" y="266" width="129" height="68"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="jkk-xP-Ff3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="IfE-3l-EXA"/>
+                            <constraint firstItem="UI8-CQ-9TW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-15" id="N1e-Yp-zTf"/>
+                            <constraint firstItem="UI8-CQ-9TW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="OuU-9i-eWT"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="jkk-xP-Ff3" secondAttribute="bottom" constant="20" id="Pe8-G9-4Ju"/>
                             <constraint firstItem="jkk-xP-Ff3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZdY-IS-6oc"/>
                             <constraint firstItem="jkk-xP-Ff3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hhF-8d-Mk7"/>
@@ -57,4 +62,7 @@
             <point key="canvasLocation" x="139" y="227"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tap" width="152" height="136"/>
+    </resources>
 </document>
