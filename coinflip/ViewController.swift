@@ -12,16 +12,21 @@ class ViewController: UIViewController {
     var coin = Coin()
     
     @IBOutlet weak var resultLabel: UILabel!
-    @IBAction func buttonPressed(sender: AnyObject) {
+    @IBAction func tapped(sender: AnyObject) {
         coin.flip()
     }
+    @IBOutlet var container: UIView!
     
     func handleCoinUpdate(notification:NSNotification?) {
         let isHeads = notification!.object as! Bool
         if( isHeads ) {
-            resultLabel.text = "Heads"
+            container.backgroundColor = UIColor.whiteColor()
+            resultLabel.textColor = UIColor.blackColor()
+            resultLabel.text = "HEADS"
         } else {
-            resultLabel.text = "Tails"
+            container.backgroundColor = UIColor.blackColor()
+            resultLabel.textColor = UIColor.whiteColor()
+            resultLabel.text = "TAILS"
         }
     }
 
