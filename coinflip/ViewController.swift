@@ -10,19 +10,43 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var resultLabel: UILabel!
-
     @IBAction func buttonPressed(sender: AnyObject) {
-        let result = self.calculateResult();
-        self.showResult(result);
+        playGame()
     }
- 
-    func calculateResult() -> Bool {
-        let flip = Int(arc4random_uniform(2))
-        return flip == 1;
+
+    var isHeads:Bool?
+    var coinState = true;
+    var timer:NSTimer?
+    var flipCount = 0;
+    var flipLimit = 10;
+    let DefaultFlipLimit = 10;
+    
+    func playGame() {
+        if( flipCount > 0 ) { return; }
+        let result = Int(arc4random_uniform(2)) == 1
+        if( isHeads != nil && isHeads! == result ) {
+            flipLimit = DefaultFlipLimit + 1
+        } else {
+            flipLimit = DefaultFlipLimit
+        }
+        isHeads = result;
+        flip()
+    }
+
+    func flip() {
+        flipCount = flipCount + 1;
+        if( flipCount > flipLimit ) {
+            flipCount = 0;
+            timer!.invalidate()
+            return showResult(isHeads)
+        }
+        coinState = !coinState;
+        showResult(coinState);
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.03 * Double(flipCount), target: self, selector: #selector(ViewController.flip), userInfo: nil, repeats: false)
     }
     
-    func showResult(result: Bool) {
-        if( result ) {
+    func showResult(isHeads:Bool?) {
+        if( isHeads! ) {
             resultLabel.text = "Heads"
         } else {
             resultLabel.text = "Tails"
