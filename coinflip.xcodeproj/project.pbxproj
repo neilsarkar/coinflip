@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F1A19351CE95D82008BF103 /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1A19341CE95D82008BF103 /* Coin.swift */; };
 		3FCBD3781CE90CB90082015B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCBD3771CE90CB90082015B /* AppDelegate.swift */; };
 		3FCBD37A1CE90CB90082015B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCBD3791CE90CB90082015B /* ViewController.swift */; };
 		3FCBD37D1CE90CB90082015B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FCBD37B1CE90CB90082015B /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F1A19341CE95D82008BF103 /* Coin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
 		3FCBD3741CE90CB90082015B /* coinflip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coinflip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FCBD3771CE90CB90082015B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FCBD3791CE90CB90082015B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +78,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F1A19321CE95D04008BF103 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				3F1A19341CE95D82008BF103 /* Coin.swift */,
+			);
+			name = Game;
+			sourceTree = "<group>";
+		};
+		3F1A19331CE95D0D008BF103 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				3FCBD3791CE90CB90082015B /* ViewController.swift */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
 		3FCBD36B1CE90CB90082015B = {
 			isa = PBXGroup;
 			children = (
@@ -99,8 +117,9 @@
 		3FCBD3761CE90CB90082015B /* coinflip */ = {
 			isa = PBXGroup;
 			children = (
+				3F1A19331CE95D0D008BF103 /* UI */,
+				3F1A19321CE95D04008BF103 /* Game */,
 				3FCBD3771CE90CB90082015B /* AppDelegate.swift */,
-				3FCBD3791CE90CB90082015B /* ViewController.swift */,
 				3FCBD37B1CE90CB90082015B /* Main.storyboard */,
 				3FCBD3811CE90CB90082015B /* Assets.xcassets */,
 				3FCBD3831CE90CB90082015B /* LaunchScreen.storyboard */,
@@ -261,6 +280,7 @@
 			files = (
 				3FCBD37A1CE90CB90082015B /* ViewController.swift in Sources */,
 				3FCBD3801CE90CB90082015B /* coinflip.xcdatamodeld in Sources */,
+				3F1A19351CE95D82008BF103 /* Coin.swift in Sources */,
 				3FCBD3781CE90CB90082015B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,6 +508,7 @@
 				3FCBD3A11CE90CB90082015B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3FCBD3A21CE90CB90082015B /* Build configuration list for PBXNativeTarget "coinflipTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +517,7 @@
 				3FCBD3A41CE90CB90082015B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3FCBD3A51CE90CB90082015B /* Build configuration list for PBXNativeTarget "coinflipUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +526,7 @@
 				3FCBD3A71CE90CB90082015B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

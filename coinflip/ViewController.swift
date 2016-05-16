@@ -14,6 +14,8 @@ class ViewController: UIViewController {
         playGame()
     }
 
+    
+    var coin = Coin()
     var isHeads:Bool?
     var coinState = true;
     var timer:NSTimer?
@@ -22,6 +24,7 @@ class ViewController: UIViewController {
     let DefaultFlipLimit = 10;
     
     func playGame() {
+        coin.cool()
         if( flipCount > 0 ) { return; }
         let result = Int(arc4random_uniform(2)) == 1
         if( isHeads != nil && isHeads! == result ) {
