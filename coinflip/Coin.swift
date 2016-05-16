@@ -10,7 +10,8 @@ import Foundation
 
 
 class Coin {
-    static let DEFAULT_FLIP_LIMIT = 10;
+    static let DEFAULT_FLIP_LIMIT = 12;
+    static let INTERVAL = 0.03;
 
     var currentValue = true;
     var flipCount = 0;
@@ -31,20 +32,21 @@ class Coin {
     }
     
     func showResult(isHeads:Bool?) {
-        NSNotificationCenter.defaultCenter().postNotificationName("Coin Updated", object: currentValue)
+        NSNotificationCenter.defaultCenter().postNotificationName("Coin Updated", object: isHeads)
     }
     
     @objc private func rotate() {
         flipCount = flipCount + 1;
-        if( flipCount > flipLimit ) {
-            return finish();
+        if( flipCount > flipLimit && currentValue != finalValue ) {
+            timer = NSTimer.scheduledTimerWithTimeInterval(Coin.INTERVAL * Double(flipCount), target: self, selector: #selector(finish), userInfo: nil, repeats: false)
+            return
         }
         currentValue = !currentValue;
         showResult(currentValue);
-        timer = NSTimer.scheduledTimerWithTimeInterval(0.03 * Double(flipCount), target: self, selector: #selector(rotate), userInfo: nil, repeats: false)
+        timer = NSTimer.scheduledTimerWithTimeInterval(Coin.INTERVAL * Double(flipCount), target: self, selector: #selector(rotate), userInfo: nil, repeats: false)
     }
     
-    private func finish() {
+    @objc private func finish() {
         flipCount = 0;
         timer?.invalidate()
         showResult(finalValue)
